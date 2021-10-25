@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/ban-ts-comment */
 /*
 Welcome to Keystone! This file is what keystone uses to start the app.
 
@@ -30,20 +29,15 @@ export default withAuth(
     // the db sets the database provider - we're using sqlite for the fastest startup experience
     db: {
       provider: 'postgresql',
-      url: process.env.DATABASE_PROVIDER_URL || '',
+      url: process.env.DATABASE_PROVIDER_URL,
     },
     server: {
       cors: {
-        origin: [
-          process.env.FRONTEND_URL || 'https://localhost:7777',
-          'https://studio.apollographql.com',
-        ],
+        origin: [process.env.FRONTEND_URL, 'https://studio.apollographql.com'],
         credentials: true,
       },
     },
-
     graphql: {
-      // @ts-ignore
       cors:
         process.env.NODE_ENV !== 'production'
           ? {

@@ -13,7 +13,7 @@
   },
   "scripts": {
     
-    "start": "keystone-next --openssl-legacy-provider start",
+    "start": "keystone-next start",
     "build": "keystone-next build",
     "postinstall": "keystone-next postinstall"
     

@@ -33,21 +33,13 @@ export default withAuth(
     },
     server: {
       cors: {
-        origin: [
-          process.env.FRONTEND_URL,
-          'https://studio.apollographql.com',
-          'https://fund-raiser-leeper-azats.ondigitalocean.app/',
-        ],
+        origin: [process.env.FRONTEND_URL, 'https://studio.apollographql.com'],
         credentials: true,
       },
     },
     graphql: {
       cors: {
-        origin: [
-          process.env.FRONTEND_URL,
-          'https://studio.apollographql.com',
-          'https://fund-raiser-leeper-azats.ondigitalocean.app/',
-        ],
+        origin: [process.env.FRONTEND_URL, 'https://studio.apollographql.com'],
         credentials: true,
       },
       debug: true,

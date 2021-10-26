@@ -79,4 +79,13 @@ export const rules = {
     // Otherwise they may only update themselves!
     return { id: session?.itemId };
   },
+  canManageRoles: ({ session }: ListAccessArgs) => {
+    if (!isSignedIn({ session })) {
+      return false;
+    }
+    if (session.user.email === 'gregleeper19@gmail.com') {
+      return true;
+    }
+    return false;
+  },
 };

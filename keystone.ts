@@ -42,15 +42,13 @@ export default withAuth(
         origin: [process.env.FRONTEND_URL, 'https://studio.apollographql.com'],
         credentials: true,
       },
+      debug: true,
     },
     // This config allows us to set up features of the Admin UI https://keystonejs.com/docs/apis/config#ui
     ui: {
       // For our starter, we check that someone has session data before letting them see the Admin UI.
       // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-      isAccessAllowed: (context) => {
-        console.log(context);
-        return true;
-      },
+      isAccessAllowed: (context) => !!context?.session?.data,
     },
 
     lists: {

@@ -38,16 +38,10 @@ export default withAuth(
       },
     },
     graphql: {
-      cors:
-        process.env.NODE_ENV !== 'production'
-          ? {
-              origin: [
-                process.env.FRONTEND_URL,
-                'https://studio.apollographql.com',
-              ],
-              credentials: true,
-            }
-          : undefined,
+      cors: {
+        origin: [process.env.FRONTEND_URL, 'https://studio.apollographql.com'],
+        credentials: true,
+      },
     },
     // This config allows us to set up features of the Admin UI https://keystonejs.com/docs/apis/config#ui
     ui: {

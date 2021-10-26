@@ -8,30 +8,11 @@ export const User = list({
   access: {
     operation: {
       create: () => true,
-      // query: () => true,
+      query: () => true,
       update: permissions.canManageUsers,
       // only people with the permission can delete themselves!
       // You can't delete yourself
       delete: permissions.canManageUsers,
-    },
-    filter: {
-      query: () =>
-        // const user = session.data;
-        // const user = await context.prisma.User.findUnique({
-        //   where: {
-        //     id: session.itemId,
-        //   },
-        // });
-        // // eslint-disable-next-line @typescript-eslint/no-unsafe-return
-        // return user;
-        // const myUser = await context.query.User.findOne({
-        //   where: {
-        //     id: user.id,
-        //   },
-        //   query: `id name email`,
-        // });
-        // console.log(myUser);
-        true,
     },
   },
   fields: {

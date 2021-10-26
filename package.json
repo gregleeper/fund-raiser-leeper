@@ -8,6 +8,9 @@
       "@typescript-eslint/no-unsafe-assignment": 0
     }
   },
+  "engines": {
+    "node": ">=14.3.0"
+  },
   "scripts": {
     "dev": "keystone-next dev",
     "start": "keystone-next start",

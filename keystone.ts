@@ -47,7 +47,10 @@ export default withAuth(
     ui: {
       // For our starter, we check that someone has session data before letting them see the Admin UI.
       // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-      isAccessAllowed: (context) => !!context?.session?.data,
+      isAccessAllowed: (context) => {
+        console.log(context);
+        return true;
+      },
     },
 
     lists: {

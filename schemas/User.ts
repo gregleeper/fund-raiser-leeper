@@ -5,16 +5,16 @@ import { permissions } from '../access';
 export const User = list({
   // Here are the fields that `User` will have. We want an email and password so they can log in
   // a name so we can refer to them, and a way to connect users to posts.
-  access: {
-    operation: {
-      create: () => true,
-      query: () => true,
-      update: permissions.canManageUsers,
-      // only people with the permission can delete themselves!
-      // You can't delete yourself
-      delete: permissions.canManageUsers,
-    },
-  },
+  // access: {
+  //   operation: {
+  //     create: () => true,
+  //     query: () => true,
+  //     update: permissions.canManageUsers,
+  //     // only people with the permission can delete themselves!
+  //     // You can't delete yourself
+  //     delete: permissions.canManageUsers,
+  //   },
+  // },
   fields: {
     name: text({ validation: { isRequired: true } }),
     phone: text({

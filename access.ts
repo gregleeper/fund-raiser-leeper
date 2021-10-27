@@ -7,11 +7,18 @@ export function isSignedIn({ session }: ListAccessArgs) {
   return !!session;
 }
 
+export function isAdmin({ session }: ListAccessArgs) {
+  if (!isSignedIn(session)) {
+    return false;
+  }
+  return !!session.isAdmin;
+}
+
 const generatedPermissions = Object.fromEntries(
   permissionsList.map((permission) => [
     permission,
     function ({ session }: ListAccessArgs) {
-      return !!session?.data.role?.[permission] || false;
+      return !!session?.data.role?.[permission] || !!session?.isAdmin || false;
     },
   ])
 );

@@ -31,6 +31,7 @@ const { withAuth } = createAuth({
     // If there are no items in the database, keystone will ask you to create
     // a new user, filling in these fields.
     fields: ['name', 'email', 'password', 'phone'],
+    itemData: { isAdmin: true },
   },
   passwordResetLink: {
     sendToken: async ({ itemId, identity, token, context }) => {

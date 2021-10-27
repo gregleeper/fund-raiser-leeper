@@ -50,7 +50,7 @@ const sessionMaxAge = 60 * 60 * 24 * 30; // 30 days
 const session = statelessSessions({
   maxAge: sessionMaxAge,
   secret: sessionSecret,
-  sameSite: false,
+  sameSite: 'none',
 });
 
 export { withAuth, session };

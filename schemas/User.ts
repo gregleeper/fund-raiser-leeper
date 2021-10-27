@@ -20,7 +20,7 @@ export const User = list({
     phone: text({
       validation: {
         isRequired: true,
-        length: { min: 10, max: 10 },
+        length: { min: 7, max: 11 },
       },
     }),
     email: text({

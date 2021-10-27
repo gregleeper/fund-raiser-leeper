@@ -49,6 +49,7 @@ export const rules = {
     return { user: { id: session?.itemId } };
   },
   canManageOrderItems: ({ session }: ListAccessArgs) => {
+    console.log(session);
     if (!isSignedIn({ session })) {
       return false;
     }
@@ -78,14 +79,5 @@ export const rules = {
     }
     // Otherwise they may only update themselves!
     return { id: session?.itemId };
-  },
-  canManageRoles: ({ session }: ListAccessArgs) => {
-    if (!isSignedIn({ session })) {
-      return false;
-    }
-    if (session.user.email === 'gregleeper19@gmail.com') {
-      return true;
-    }
-    return false;
   },
 };

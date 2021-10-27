@@ -5,7 +5,7 @@ import {
 } from '../node_modules/.keystone/types';
 
 /* eslint-disable */
-import { KeystoneContext, SessionStore } from '@keystone-next/keystone/types';
+import { KeystoneContext } from '@keystone-next/keystone/types';
 import stripeConfig from '../lib/stripe';
 
 interface Arguments {

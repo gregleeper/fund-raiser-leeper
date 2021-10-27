@@ -12,7 +12,7 @@
     "node": "=16.4.2"
   },
   "scripts": {
-    
+    "dev": "keystone-next dev",
     "start": "keystone-next start",
     "build": "keystone-next build",
     "postinstall": "keystone-next postinstall"

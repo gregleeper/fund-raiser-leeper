@@ -43,6 +43,9 @@ export default withAuth(
         credentials: true,
       },
       debug: true,
+      apolloConfig: {
+        introspection: true,
+      },
     },
     // This config allows us to set up features of the Admin UI https://keystonejs.com/docs/apis/config#ui
     ui: {
